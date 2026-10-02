@@ -2,938 +2,831 @@
 <html lang="fa" dir="rtl">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>باشگاه استقلال | ورود و ثبت نام</title>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <meta charset="UTF-8">
 
-html{
-    width:100%;
-    min-height:100%;
-}
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-body{
-    width:100%;
-    min-height:100vh;
+    <title>ثبت نام | باشگاه استقلال</title>
 
-    font-family:
-    Tahoma,
-    Arial,
-    sans-serif;
+    <style>
 
-    color:#fff;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    background:
-    radial-gradient(
-        circle at 85% 5%,
-        rgba(0,119,255,.30),
-        transparent 32%
-    ),
+        body {
+            min-height: 100vh;
 
-    radial-gradient(
-        circle at 5% 90%,
-        rgba(0,80,200,.22),
-        transparent 35%
-    ),
+            font-family:
+                Tahoma,
+                Arial,
+                sans-serif;
 
-    linear-gradient(
-        145deg,
-        #020918 0%,
-        #031a42 50%,
-        #020817 100%
-    );
+            color: white;
 
-    overflow-x:hidden;
-}
+            background:
+                radial-gradient(
+                    circle at 15% 10%,
+                    rgba(0, 100, 220, .20),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 90%,
+                    rgba(0, 60, 160, .18),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #02050b,
+                    #061426 50%,
+                    #010308
+                );
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
+            padding: 30px 15px;
+        }
 
-    background:
-    linear-gradient(
-        125deg,
-        transparent 30%,
-        rgba(0,110,255,.07) 50%,
-        transparent 70%
-    );
-}
+        /* ---------------- HEADER ---------------- */
 
-.page{
-    width:100%;
-    min-height:100vh;
+        .header {
+            text-align: center;
 
-    padding:50px 20px 40px;
+            margin-bottom: 25px;
+        }
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
+        .header h1 {
+            font-size: 30px;
 
-.header{
-    width:100%;
-    max-width:650px;
+            margin-bottom: 8px;
 
-    text-align:center;
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #72baff
+                );
 
-    margin-bottom:28px;
-}
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.header h1{
-    font-size:clamp(28px,5vw,42px);
+        .header p {
+            color: #8fa3b9;
 
-    font-weight:800;
-    line-height:1.5;
+            font-size: 14px;
+        }
 
-    text-shadow:
-    0 0 20px
-    rgba(0,120,255,.35);
-}
+        /* ---------------- MAIN BOX ---------------- */
 
-.header p{
-    margin-top:7px;
+        .auth-box {
 
-    color:#159cff;
+            width: 100%;
 
-    font-size:clamp(14px,2.5vw,20px);
+            max-width: 650px;
 
-    line-height:1.8;
-}
+            margin: auto;
 
-.auth-box{
-    width:100%;
-    max-width:650px;
+            padding: 35px;
 
-    padding:17px;
+            border-radius: 28px;
 
-    border-radius:26px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(11, 29, 52, .94),
+                    rgba(3, 10, 20, .96)
+                );
 
-    border:
-    1px solid
-    rgba(0,149,255,.75);
+            border: 1px solid
+                rgba(80, 160, 255, .20);
 
-    background:
-    rgba(2,25,65,.78);
+            box-shadow:
+                0 30px 90px
+                rgba(0, 0, 0, .75),
 
-    box-shadow:
+                0 0 50px
+                rgba(0, 80, 180, .10);
 
-    0 0 30px
-    rgba(0,102,255,.22),
+            backdrop-filter: blur(15px);
 
-    inset 0 0 30px
-    rgba(0,102,255,.08);
+            position: relative;
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-}
+            overflow: hidden;
+        }
 
-.tabs{
-    width:100%;
-    height:65px;
+        .auth-box::before {
 
-    display:flex;
-    direction:rtl;
+            content: "";
 
-    padding:3px;
+            position: absolute;
 
-    border-radius:17px;
+            top: 0;
 
-    background:
-    rgba(0,47,115,.45);
+            right: 10%;
 
-    border:
-    1px solid
-    rgba(0,125,255,.5);
-}
+            left: 10%;
 
-.tab{
-    width:50%;
-    height:100%;
+            height: 2px;
 
-    border:none;
-    border-radius:14px;
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #087cff,
+                    #62b5ff,
+                    #087cff,
+                    transparent
+                );
 
-    background:transparent;
+            box-shadow:
+                0 0 20px #087cff;
+        }
 
-    color:#a9c9ef;
+        /* ---------------- TABS ---------------- */
 
-    font-family:inherit;
-    font-size:17px;
+        .tabs {
 
-    cursor:pointer;
-}
+            display: flex;
 
-.tab.active{
-    color:#fff;
+            gap: 8px;
 
-    background:
-    linear-gradient(
-        135deg,
-        #087dff,
-        #1464e9
-    );
+            margin-bottom: 30px;
+        }
 
-    box-shadow:
-    0 0 18px
-    rgba(0,111,255,.40);
-}
+        .tab {
 
-.content{
-    width:100%;
+            flex: 1;
 
-    padding:
-    34px
-    8px
-    8px;
-}
+            padding: 13px;
 
-.content h2{
-    text-align:center;
+            border-radius: 12px;
 
-    font-size:clamp(23px,5vw,30px);
+            text-align: center;
 
-    font-weight:800;
+            font-size: 14px;
 
-    line-height:1.6;
+            color: #8295aa;
 
-    margin-bottom:8px;
-}
+            background:
+                rgba(255, 255, 255, .035);
 
-.description{
-    text-align:center;
+            border: 1px solid
+                rgba(255, 255, 255, .06);
+        }
 
-    color:#6694c8;
+        .tab.active {
 
-    font-size:clamp(12px,2.5vw,14px);
+            color: white;
 
-    line-height:1.9;
+            background:
+                linear-gradient(
+                    135deg,
+                    #075da9,
+                    #06386d
+                );
 
-    margin-bottom:28px;
-}
+            border-color:
+                rgba(70, 160, 255, .30);
 
-.input-box{
-    width:100%;
-    min-height:68px;
+            box-shadow:
+                0 8px 25px
+                rgba(0, 80, 180, .20);
+        }
 
-    display:flex;
-    align-items:center;
+        /* ---------------- TITLE ---------------- */
 
-    direction:ltr;
+        .form-title {
 
-    gap:12px;
+            font-size: 24px;
 
-    padding:8px 16px;
+            margin-bottom: 8px;
 
-    margin-bottom:13px;
+            color: #ffffff;
+        }
 
-    border-radius:17px;
+        .form-description {
 
-    border:
-    1px solid
-    rgba(0,132,255,.58);
+            color: #788ca2;
 
-    background:
-    rgba(1,32,78,.68);
+            font-size: 13px;
 
-    transition:.25s;
-}
+            margin-bottom: 28px;
+        }
 
-.input-box:focus-within{
-    border-color:#119aff;
+        /* ---------------- FORM ---------------- */
 
-    box-shadow:
-    0 0 17px
-    rgba(0,126,255,.20);
-}
+        .content {
 
-.icon{
-    width:32px;
-    min-width:32px;
+            display: flex;
 
-    text-align:center;
+            flex-direction: column;
 
-    color:#a9d8ff;
+            gap: 16px;
+        }
 
-    font-size:22px;
-}
+        .row {
 
-.input-content{
-    flex:1;
-    min-width:0;
+            display: grid;
 
-    direction:rtl;
-}
+            grid-template-columns:
+                1fr 1fr;
 
-.input-content label{
-    display:block;
+            gap: 14px;
+        }
 
-    color:#d5e7ff;
+        .field {
 
-    font-size:12px;
+            display: flex;
 
-    margin-bottom:3px;
-}
+            flex-direction: column;
 
-.input-content input{
-    width:100%;
-    height:25px;
+            gap: 8px;
+        }
 
-    border:none;
-    outline:none;
+        .field label {
 
-    background:transparent;
+            font-size: 13px;
 
-    color:#fff;
+            color: #b9c8d8;
+        }
 
-    font-family:inherit;
+        .field input {
 
-    font-size:14px;
+            width: 100%;
 
-    text-align:right;
-}
+            padding: 14px 15px;
 
-.input-content input::placeholder{
-    color:#5f87bb;
-}
+            border-radius: 12px;
 
-.input-content input:invalid:not(:placeholder-shown){
-    border-bottom:1px solid #ff5577;
-}
+            outline: none;
 
-.input-content input:valid:not(:placeholder-shown){
-    border-bottom:
-    1px solid
-    rgba(0,220,150,.5);
-}
+            color: white;
 
-.terms{
-    width:100%;
+            background:
+                rgba(255, 255, 255, .035);
 
-    display:flex;
-    align-items:center;
+            border: 1px solid
+                rgba(120, 160, 200, .13);
 
-    gap:8px;
+            font-family:
+                Tahoma,
+                Arial,
+                sans-serif;
 
-    color:#b7cce5;
+            font-size: 13px;
 
-    font-size:clamp(11px,2.5vw,13px);
+            transition: .25s;
+        }
 
-    line-height:1.8;
+        .field input::placeholder {
+            color: #506276;
+        }
 
-    margin:20px 3px;
+        .field input:focus {
 
-    cursor:pointer;
-}
+            border-color:
+                rgba(50, 145, 255, .65);
 
-.terms input{
-    width:18px;
-    height:18px;
+            background:
+                rgba(10, 50, 90, .25);
 
-    flex-shrink:0;
+            box-shadow:
+                0 0 0 3px
+                rgba(0, 110, 255, .08);
+        }
 
-    accent-color:#087dff;
+        /* ---------------- CHECKBOX ---------------- */
 
-    cursor:pointer;
-}
+        .terms {
 
-.terms b{
-    color:#079cff;
-}
+            display: flex;
 
-.main-btn{
-    width:100%;
-    height:61px;
+            align-items: center;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+            gap: 9px;
 
-    gap:12px;
+            margin-top: 4px;
 
-    border:none;
-    border-radius:17px;
+            color: #73869b;
 
-    color:#fff;
+            font-size: 12px;
 
-    background:
-    linear-gradient(
-        110deg,
-        #087bff,
-        #0758e8
-    );
+            line-height: 1.8;
+        }
 
-    font-family:inherit;
+        .terms input {
 
-    font-size:clamp(16px,3.5vw,20px);
+            width: 16px;
 
-    font-weight:600;
+            height: 16px;
 
-    cursor:pointer;
+            accent-color: #087cff;
 
-    box-shadow:
-    0 7px 25px
-    rgba(0,100,255,.30);
+            cursor: pointer;
+        }
 
-    transition:.2s;
-}
+        .terms a {
 
-.main-btn:hover{
-    transform:translateY(-2px);
+            color: #4da8ff;
 
-    box-shadow:
-    0 10px 30px
-    rgba(0,119,255,.45);
-}
+            text-decoration: none;
+        }
 
-.main-btn:active{
-    transform:translateY(0);
-}
+        /* ---------------- BUTTON ---------------- */
 
-.main-btn strong{
-    font-size:24px;
-    font-weight:400;
-}
+        .main-btn {
 
-.or{
-    width:100%;
+            width: 100%;
 
-    display:flex;
-    align-items:center;
+            border: none;
 
-    gap:15px;
+            outline: none;
 
-    margin:25px 0;
+            cursor: pointer;
 
-    color:#adc5e2;
-}
+            padding: 16px;
 
-.or span{
-    flex:1;
+            margin-top: 7px;
 
-    height:1px;
+            border-radius: 13px;
 
-    background:
-    rgba(110,160,220,.25);
-}
+            color: white;
 
-.or b{
-    font-size:14px;
-    font-weight:400;
-}
+            font-family:
+                Tahoma,
+                Arial,
+                sans-serif;
 
-.google-btn{
-    width:100%;
-    height:57px;
+            font-size: 15px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+            font-weight: bold;
 
-    border-radius:16px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #087cff,
+                    #0752a0
+                );
 
-    border:
-    1px solid
-    rgba(0,129,255,.55);
+            border:
+                1px solid
+                rgba(120, 195, 255, .30);
 
-    background:
-    rgba(2,28,68,.55);
+            box-shadow:
+                0 12px 30px
+                rgba(0, 90, 210, .25);
 
-    color:#dceaff;
+            transition: .3s;
+        }
 
-    font-family:inherit;
+        .main-btn:hover {
 
-    font-size:clamp(14px,3vw,17px);
+            transform:
+                translateY(-2px);
 
-    cursor:pointer;
-}
+            background:
+                linear-gradient(
+                    135deg,
+                    #168bff,
+                    #0861b7
+                );
 
-.google{
-    margin-left:12px;
+            box-shadow:
+                0 16px 38px
+                rgba(0, 105, 230, .40);
+        }
 
-    font-family:Arial,sans-serif;
+        .main-btn:active {
 
-    font-size:24px;
+            transform:
+                translateY(0);
+        }
 
-    font-weight:bold;
+        /* ---------------- GOOGLE ---------------- */
 
-    color:#4285f4;
-}
+        .google-btn {
 
-.login-text{
-    text-align:center;
+            width: 100%;
 
-    color:#8ba9ca;
+            padding: 14px;
 
-    font-size:clamp(12px,2.5vw,14px);
+            border-radius: 12px;
 
-    margin-top:25px;
+            background:
+                rgba(255, 255, 255, .035);
 
-    line-height:1.8;
-}
+            border:
+                1px solid
+                rgba(255, 255, 255, .08);
 
-.login-text a{
-    color:#0798ff;
+            color: #dce5ef;
 
-    text-decoration:none;
+            font-family:
+                Tahoma,
+                Arial,
+                sans-serif;
 
-    font-weight:700;
-}
+            font-size: 13px;
 
-@media(max-width:600px){
+            cursor: pointer;
 
-    .page{
-        min-height:100svh;
+            transition: .25s;
+        }
 
-        padding:25px 10px 30px;
-    }
+        .google-btn:hover {
 
-    .header{
-        margin-bottom:20px;
-    }
+            background:
+                rgba(255, 255, 255, .07);
 
-    .header h1{
-        font-size:28px;
-    }
+            border-color:
+                rgba(255, 255, 255, .15);
+        }
 
-    .header p{
-        font-size:14px;
-    }
+        /* ---------------- DIVIDER ---------------- */
 
-    .auth-box{
-        padding:10px;
-        border-radius:21px;
-    }
+        .divider {
 
-    .tabs{
-        height:57px;
-        border-radius:15px;
-    }
+            display: flex;
 
-    .tab{
-        font-size:14px;
-    }
+            align-items: center;
 
-    .content{
-        padding:25px 3px 5px;
-    }
+            gap: 12px;
 
-    .content h2{
-        font-size:23px;
-    }
+            margin: 5px 0;
+        }
 
-    .description{
-        font-size:12px;
-        margin-bottom:22px;
-    }
+        .divider::before,
+        .divider::after {
 
-    .input-box{
-        min-height:63px;
+            content: "";
 
-        padding:7px 12px;
+            height: 1px;
 
-        border-radius:15px;
+            flex: 1;
 
-        gap:7px;
-    }
+            background:
+                rgba(255, 255, 255, .07);
+        }
 
-    .icon{
-        width:28px;
-        min-width:28px;
+        .divider span {
 
-        font-size:20px;
-    }
+            color: #53677c;
 
-    .input-content label{
-        font-size:11px;
-    }
+            font-size: 11px;
+        }
 
-    .input-content input{
-        height:23px;
-        font-size:12px;
-    }
+        /* ---------------- LOGIN ---------------- */
 
-    .terms{
-        font-size:11px;
-        margin:18px 2px;
-    }
+        .login-text {
 
-    .main-btn{
-        height:56px;
+            text-align: center;
 
-        border-radius:15px;
+            color: #64788e;
 
-        font-size:17px;
-    }
+            font-size: 12px;
 
-    .google-btn{
-        height:53px;
+            margin-top: 5px;
+        }
 
-        border-radius:15px;
+        .login-text a {
 
-        font-size:14px;
-    }
+            color: #55aaff;
 
-    .login-text{
-        font-size:12px;
-    }
-}
+            text-decoration: none;
 
-@media(max-width:380px){
+            font-weight: bold;
+        }
 
-    .page{
-        padding:20px 7px 25px;
-    }
+        /* ---------------- MOBILE ---------------- */
 
-    .header h1{
-        font-size:25px;
-    }
+        @media (max-width: 600px) {
 
-    .header p{
-        font-size:12px;
-    }
+            body {
+                padding: 18px 12px;
+            }
 
-    .auth-box{
-        padding:8px;
-        border-radius:19px;
-    }
+            .header h1 {
+                font-size: 25px;
+            }
 
-    .tabs{
-        height:53px;
-    }
+            .auth-box {
+                padding: 25px 18px;
+                border-radius: 22px;
+            }
 
-    .content h2{
-        font-size:21px;
-    }
+            .form-title {
+                font-size: 21px;
+            }
 
-    .description{
-        font-size:11px;
-    }
+            .row {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
 
-    .input-box{
-        min-height:59px;
-        padding:7px 9px;
-    }
+            .field input {
+                padding: 13px;
+            }
+        }
 
-    .input-content input{
-        font-size:11px;
-    }
+        @media (max-width: 380px) {
 
-    .terms{
-        font-size:10px;
-        gap:6px;
-    }
+            .header h1 {
+                font-size: 22px;
+            }
 
-    .terms input{
-        width:16px;
-        height:16px;
-    }
+            .auth-box {
+                padding: 22px 14px;
+            }
 
-    .main-btn{
-        height:53px;
-        font-size:15px;
-    }
+            .tabs {
+                gap: 5px;
+            }
 
-    .google-btn{
-        height:50px;
-        font-size:13px;
-    }
-}
+            .tab {
+                padding: 11px 5px;
+            }
+        }
 
-</style>
+    </style>
+
 </head>
+
 
 <body>
 
-<main class="page">
 
-<header class="header">
+    <!-- HEADER -->
 
-<h1>
-باشگاه استقلال
-</h1>
+    <header class="header">
 
-<p>
-سامانه خرید بلیت مسابقات فوتبال
-</p>
+        <h1>
+            باشگاه استقلال
+        </h1>
 
-</header>
+        <p>
+            سامانه خرید بلیت مسابقات فوتبال
+        </p>
 
-<section class="auth-box">
+    </header>
 
-<div class="tabs">
 
-<button class="tab active" type="button">
-ورود
-<span>♙</span>
-</button>
 
-<button class="tab" type="button">
-ثبت نام
-<span>♙+</span>
-</button>
+    <!-- AUTH BOX -->
 
-</div>
+    <main class="auth-box">
 
-<form
-class="content"
-action="welcome.html"
-method="get"
->
 
-<h2>
-به استقلال خوش آمدید!
-</h2>
+        <!-- TABS -->
 
-<p class="description">
-برای ثبت نام، اطلاعات خود را وارد کنید.
-</p>
+        <div class="tabs">
 
-<div class="input-box">
+            <div class="tab">
+                ورود
+            </div>
 
-<div class="icon">▣</div>
+            <div class="tab active">
+                ثبت نام
+            </div>
 
-<div class="input-content">
+        </div>
 
-<label for="phone">
-شماره موبایل
-</label>
 
-<input
-id="phone"
-name="phone"
-type="tel"
-inputmode="numeric"
-placeholder="09xxxxxxxxx"
-pattern="09[0-9]{9}"
-title="شماره موبایل باید با 09 شروع شود و 11 رقم باشد."
-required
->
 
-</div>
+        <h2 class="form-title">
+            به استقلال خوش آمدید!
+        </h2>
 
-</div>
+        <p class="form-description">
+            برای ایجاد حساب کاربری اطلاعات زیر را وارد کنید.
+        </p>
 
-<div class="input-box">
 
-<div class="icon">◉</div>
 
-<div class="input-content">
+        <!-- FORM -->
 
-<label for="password">
-رمز عبور
-</label>
+        <form
+            class="content"
+            onsubmit="
+                event.preventDefault();
+                window.location.href='welcome.html';
+            "
+        >
 
-<input
-id="password"
-name="password"
-type="password"
-placeholder="حداقل ۸ کاراکتر"
-minlength="8"
-required
->
 
-</div>
+            <!-- NAME -->
 
-</div>
+            <div class="row">
 
-<div class="input-box">
+                <div class="field">
 
-<div class="icon">▣</div>
+                    <label>
+                        نام
+                    </label>
 
-<div class="input-content">
+                    <input
+                        type="text"
+                        placeholder="نام خود را وارد کنید"
+                        required
+                    >
 
-<label for="national-code">
-کد ملی
-</label>
+                </div>
 
-<input
-id="national-code"
-name="national-code"
-type="text"
-inputmode="numeric"
-placeholder="کد ملی خود را وارد کنید"
-pattern="[0-9]{10}"
-title="کد ملی باید 10 رقم باشد."
-required
->
 
-</div>
+                <div class="field">
 
-</div>
+                    <label>
+                        نام خانوادگی
+                    </label>
 
-<div class="input-box">
+                    <input
+                        type="text"
+                        placeholder="نام خانوادگی"
+                        required
+                    >
 
-<div class="icon">♙</div>
+                </div>
 
-<div class="input-content">
+            </div>
 
-<label for="first-name">
-نام
-</label>
 
-<input
-id="first-name"
-name="first-name"
-type="text"
-placeholder="نام خود را وارد کنید"
-required
->
 
-</div>
+            <!-- PHONE / NATIONAL CODE -->
 
-</div>
+            <div class="row">
 
-<div class="input-box">
+                <div class="field">
 
-<div class="icon">♙</div>
+                    <label>
+                        شماره موبایل
+                    </label>
 
-<div class="input-content">
+                    <input
+                        type="tel"
+                        placeholder="09123456789"
+                        pattern="09[0-9]{9}"
+                        required
+                    >
 
-<label for="last-name">
-نام خانوادگی
-</label>
+                </div>
 
-<input
-id="last-name"
-name="last-name"
-type="text"
-placeholder="نام خانوادگی خود را وارد کنید"
-required
->
 
-</div>
+                <div class="field">
 
-</div>
+                    <label>
+                        کد ملی
+                    </label>
 
-<div class="input-box">
+                    <input
+                        type="text"
+                        placeholder="کد ملی ۱۰ رقمی"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
 
-<div class="icon">□</div>
+                </div>
 
-<div class="input-content">
+            </div>
 
-<label for="birthday">
-تاریخ تولد
-</label>
 
-<input
-id="birthday"
-name="birthday"
-type="text"
-placeholder="مثال: ۱۳۷۰/۰۱/۰۱"
-required
->
 
-</div>
+            <!-- EMAIL / BIRTHDAY -->
 
-</div>
+            <div class="row">
 
-<div class="input-box">
+                <div class="field">
 
-<div class="icon">✉</div>
+                    <label>
+                        ایمیل
+                    </label>
 
-<div class="input-content">
+                    <input
+                        type="email"
+                        placeholder="example@gmail.com"
+                        required
+                    >
 
-<label for="email">
-ایمیل
-</label>
+                </div>
 
-<input
-id="email"
-name="email"
-type="email"
-placeholder="example@gmail.com"
-title="لطفاً یک ایمیل معتبر وارد کنید."
-required
->
 
-</div>
+                <div class="field">
 
-</div>
+                    <label>
+                        تاریخ تولد
+                    </label>
 
-<label class="terms">
+                    <input
+                        type="text"
+                        placeholder="۱۴۰۰/۰۱/۰۱"
+                        required
+                    >
 
-<input
-type="checkbox"
-name="terms"
-required
->
+                </div>
 
-<span>
-با
-<b>قوانین و مقررات</b>
-باشگاه استقلال موافقم.
-</span>
+            </div>
 
-</label>
 
-<button
-class="main-btn"
-type="submit"
->
 
-<span>
-ثبت نام
-</span>
+            <!-- PASSWORD -->
 
-<strong>
-♙+
-</strong>
+            <div class="field">
 
-</button>
+                <label>
+                    رمز عبور
+                </label>
 
-<div class="or">
+                <input
+                    type="password"
+                    placeholder="حداقل ۸ کاراکتر"
+                    minlength="8"
+                    required
+                >
 
-<span></span>
+            </div>
 
-<b>
-یا
-</b>
 
-<span></span>
 
-</div>
+            <!-- TERMS -->
 
-<button
-class="google-btn"
-type="button"
->
+            <label class="terms">
 
-<span class="google">
-G
-</span>
+                <input
+                    type="checkbox"
+                    required
+                >
 
-<span>
-ثبت نام با گوگل
-</span>
+                <span>
+                    قوانین و شرایط سامانه را می‌پذیرم.
+                    <a href="#">
+                        مشاهده قوانین
+                    </a>
+                </span>
 
-</button>
+            </label>
 
-<p class="login-text">
 
-حساب کاربری دارید؟
 
-<a href="#">
-وارد شوید
-</a>
+            <!-- REGISTER BUTTON -->
 
-</p>
+            <button
+                class="main-btn"
+                type="submit"
+            >
 
-</form>
+                ثبت نام
+                <span>
+                    ♙+
+                </span>
 
-</section>
+            </button>
 
-</main>
+
+
+            <!-- DIVIDER -->
+
+            <div class="divider">
+
+                <span>
+                    یا
+                </span>
+
+            </div>
+
+
+
+            <!-- GOOGLE -->
+
+            <button
+                class="google-btn"
+                type="button"
+            >
+
+                ادامه با Google
+
+            </button>
+
+
+
+            <!-- LOGIN -->
+
+            <p class="login-text">
+
+                قبلاً حساب دارید؟
+
+                <a href="#">
+                    ورود به حساب
+                </a>
+
+            </p>
+
+
+        </form>
+
+    </main>
+
 
 </body>
 
-    </html>
+</html>
